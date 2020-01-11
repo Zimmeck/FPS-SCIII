@@ -153,7 +153,7 @@ public class VerySimplePistol : MonoBehaviour
     {
 
         //En caso de volver a disparar, tendras municion 0, por tanto, cuando llegue al comprobante, cortará la funcion y no disparará.
-        m_shortTimer = 0f;
+        m_shortTimer = 5f;
         if (currentAmmo <= 0) // La municion es menor o igual que 0.
         {
             return; // Deja de leer el metodo porque has restado la municion y la municion es igual a 0.

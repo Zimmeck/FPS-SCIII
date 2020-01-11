@@ -22,8 +22,8 @@ public class ProjectileRocket : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         DoExplosion(collision.contacts[0].point);
-        Destroy(gameObject);
-       
+        
+
     }
 
     void DoExplosion(Vector3 explosionPoint)
@@ -35,7 +35,7 @@ public class ProjectileRocket : MonoBehaviour
             {
                 hitcol.GetComponent<Rigidbody>().isKinematic = false;
                 hitcol.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, explosionPoint, blastRadius, 0.2f, ForceMode.Impulse);
-                hitcol.transform.GetComponent<Enemigo>().m_life -= 10;
+                hitcol.transform.GetComponent<Enemigo>().m_life -= 50;
             }
           
         }

@@ -11,6 +11,7 @@ public class projectileGrenade : MonoBehaviour
     public float speed;
     Rigidbody rb;
     float timer;
+    public GameObject areaexplo;
 
     private void Start()
     {
@@ -38,10 +39,12 @@ public class projectileGrenade : MonoBehaviour
                 {
                     hitcol.GetComponent<Rigidbody>().isKinematic = false;
                     hitcol.GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, blastRadius, 0.2f, ForceMode.Impulse);
+                    areaexplo.transform.GetComponent<Enemigo>().m_life -= 50;
                 }
 
             }
-            Destroy(gameObject);
+            areaexplo.SetActive(true);
+            Destroy(gameObject, 1f);
         }
     }
 }
