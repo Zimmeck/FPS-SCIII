@@ -173,3 +173,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   speed: 10
+  areaexplo: {fileID: 723666258628188369}

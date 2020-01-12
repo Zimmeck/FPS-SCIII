@@ -10,6 +10,7 @@ public class Waves : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         spawners = new GameObject[5];
 
         for(int i= 0; i< spawners.Length; i++)
@@ -19,8 +20,8 @@ public class Waves : MonoBehaviour
     }
     private void Update()
     {
-        timer = Time.deltaTime;
-        if (timer == 60)
+        timer += Time.deltaTime;
+        if (timer == 30)
         {
             SpawnEnemy();
             timer = 0;
